@@ -1,0 +1,39 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="container mt-4">
+    <div class="row d-flex justify-content-center mb-5">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <label for="categoryFilter">Filter By Category</label>
+            <ng-select id="categoryFilter" [items]="categories" placeholder="Select Category" [searchable]="true"
+                [(ngModel)]="category" bindLabel="name" (change)="filter($event)" bindValue="name">
+            </ng-select>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-12">
+            <h3>Products / <span>{{category}}</span></h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch mb-3" *ngFor="let product of products">
+            <div class="card mb-4 flex-fill shadow-sm border-0 product-card">
+                <img [src]="product.image" class="card-img-top" alt="{{ product.title }}">
+
+                <!-- Rating positioned on the top right corner -->
+                <span class="rating-badge">{{ product.rating.rate }} <i class='bx bxs-star'></i></span>
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                </div>
+                <div class="d-flex justify-content-between align-items-baseline mb-3 px-2">
+                    <p class="card-text"><strong>Price: ${{ product.price }}</strong></p>
+                    <button class="btn btn-primary w-50 add-to-cart-btn" (click)="addToCart(product)">Add to
+                        Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

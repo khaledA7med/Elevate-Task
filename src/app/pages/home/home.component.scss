@@ -1,0 +1,92 @@
+$text-color: #007bff;
+
+// Hero Section
+.hero-section {
+  background-image: url("../../../assets/cyber-monday-sale-shopping-cart-copy-space.jpg");
+  background-size: cover;
+  background-position: center center;
+  color: #000;
+  padding: 200px 0;
+  height: 70vh;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    padding: 10px 30px;
+  }
+}
+
+// Featured Products Section
+.featured-products {
+  .section-title {
+    font-size: 2rem;
+    color: $text-color;
+    margin-bottom: 40px;
+  }
+
+  .product-card {
+    border: none;
+
+    img {
+      border-radius: 5px;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+  }
+}
+
+// Categories Section
+.categories-section {
+  background-color: #f9f9f9;
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: $text-color;
+  }
+
+  .category-card {
+    img {
+      border-radius: 5px;
+    }
+
+    h5 {
+      margin-top: 10px;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  background-color: #343a40;
+  color: #fff;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    padding: 10px 30px;
+  }
+}

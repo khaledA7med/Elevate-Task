@@ -1,0 +1,66 @@
+$navbar-bg: #212324;
+$navbar-text-color: #bac2ca;
+$navbar-hover-color: #007bff;
+
+.navbar {
+  background-color: $navbar-bg;
+
+  .navbar-brand {
+    color: $navbar-hover-color;
+
+    &:hover {
+      color: $navbar-text-color;
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $navbar-hover-color;
+
+    // Change the toggler icon color to match the hover color
+    .navbar-toggler-icon {
+      background-image: none;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 20px; // Adjust width if necessary
+        height: 2px; // Adjust height if necessary
+        background-color: $navbar-hover-color; // Use hover color
+        margin: 5px 0; // Space between lines
+      }
+
+      &:hover {
+        color: $navbar-text-color;
+        border-color: $navbar-text-color;
+      }
+    }
+  }
+
+  .nav-link {
+    color: $navbar-text-color;
+
+    &:hover {
+      color: $navbar-hover-color;
+    }
+
+    &.active {
+      color: $navbar-hover-color;
+    }
+  }
+
+  .form-control {
+    border-radius: 20px;
+  }
+
+  .btn-outline-success {
+    border-color: $navbar-hover-color;
+    color: $navbar-hover-color;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: $navbar-hover-color;
+      color: white;
+    }
+  }
+}

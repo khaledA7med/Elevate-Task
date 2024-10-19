@@ -1,0 +1,103 @@
+// .card {
+//   transition: transform 0.3s;
+
+//   &:hover {
+//     transform: scale(1.05);
+//   }
+
+//   img {
+//     height: 200px; // Adjust height as needed
+//     object-fit: cover; // Ensure the image covers the area
+//   }
+// }
+ng-select {
+  width: 100%;
+  margin-top: 10px; // Adjust spacing as needed
+}
+
+.card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  img {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .card-body {
+    padding: 25px;
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #333;
+    }
+  }
+}
+
+// New rating badge styling
+.rating-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px; // Use left: 15px for top-left position
+  background-color: #ffc107; // Rating badge color (yellow for star-like feel)
+  color: #fff;
+  font-weight: bold;
+  padding: 0.4em 0.8em;
+  border-radius: 50px; // Rounded pill shape
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // Optional shadow for emphasis
+  display: flex;
+  align-items: center;
+
+  i {
+    margin-left: 5px;
+    color: #fff;
+  }
+}
+
+// Styling the button for add to cart
+.add-to-cart-btn {
+  background-image: linear-gradient(
+    to right,
+    #007bff,
+    #0056b3
+  ); // Gradient color
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-image 0.3s ease-in-out; // Transition applied to background-image
+
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      #0056b3,
+      #003d80
+    ); // Different gradient on hover
+  }
+}
+
+.product-card {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+
+  .d-flex {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  .card-body {
+    flex: 1;
+  }
+}

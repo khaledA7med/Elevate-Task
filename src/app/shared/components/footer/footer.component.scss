@@ -1,0 +1,61 @@
+// Footer Variables
+$footer-bg-color: #343a40;
+$footer-text-color: #ffffff;
+$footer-link-color: #ffffff;
+$footer-link-hover-color: #007bff;
+$social-icon-color: #ffffff;
+$social-icon-hover-color: #007bff;
+
+.footer {
+  background-color: $footer-bg-color;
+  color: $footer-text-color;
+  padding-top: 50px;
+  padding-bottom: 20px;
+
+  .footer-heading {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: $footer-link-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $footer-link-hover-color;
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  .social-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: $social-icon-color;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $social-icon-hover-color;
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 0.9rem;
+  }
+}

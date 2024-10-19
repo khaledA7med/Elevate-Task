@@ -1,0 +1,55 @@
+<div class="homepage">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1>Welcome to ShopEase</h1>
+            <p>Your one-stop destination for all your shopping needs</p>
+            <a routerLink="/products" class="btn btn-primary btn-lg">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Shop by Category</h2>
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <img src="../../../assets/travel-summer-accessories-blue-wood.jpg" alt="Category 1"
+                            class="img-fluid mb-3">
+                        <button class="btn btn-lg btn-info" (click)="onFilter(categories[0])">
+                            Electronics
+                        </button>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <img src="../../../assets/ai-generated-8659741_640.jpg" alt="Category 2" class="img-fluid mb-3">
+                        <button class="btn btn-lg btn-info" (click)="onFilter(categories[1])">
+                            Jewelery
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <img src="../../../assets/pexels-solliefoto-298863.jpg" alt="Category 3" class="img-fluid mb-3">
+                        <button class="btn btn-lg btn-info" (click)="onFilter(categories[2])">
+                            Men's Clothing
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="category-card">
+                        <img src="../../../assets/photo-1483985988355-763728e1935b.jpeg" alt="Category 4"
+                            class="img-fluid mb-3">
+                        <button class="btn btn-lg btn-info" (click)="onFilter(categories[3])">
+                            Women's Clothing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
