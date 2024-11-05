@@ -7,9 +7,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { FormsModule } from '@angular/forms';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent],
+  declarations: [
+    NavbarComponent,
+    FooterComponent,
+    ProductCardComponent,
+    ProductDetailsComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -24,6 +31,8 @@ import { FormsModule } from '@angular/forms';
     NgSelectModule,
     NgxSpinnerModule,
     FormsModule,
+    ProductCardComponent,
+    ProductDetailsComponent,
   ],
 })
 export class SharedModule {}

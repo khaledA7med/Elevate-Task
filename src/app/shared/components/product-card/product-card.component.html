@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch mb-3" *ngFor="let product of products">
+        <div class="card mb-4 flex-fill shadow-sm border-0 product-card">
+            <div class="image-container">
+                <img [src]="product.image" class="card-img-top" alt="{{ product.title }}">
+                <div class="overlay">
+                    <p class="overlay-desc">{{ product.description | slice:0:100 }}...</p>
+                    <button class="btn btn-light more-details-btn" (click)="openProductDetails(product.id)">See More
+                        Details</button>
+                </div>
+            </div>
+
+            <!-- Rating positioned on the top right corner -->
+            <span class="rating-badge">{{ product.rating.rate }} <i class='bx bxs-star'></i></span>
+
+            <div class="card-body text-center">
+                <h5 class="card-title">{{ product.title }}</h5>
+            </div>
+            <div class="d-flex justify-content-between align-items-baseline mb-3 px-2">
+                <p class="card-text"><strong>Price: ${{ product.price }}</strong></p>
+                <button class="btn btn-primary w-50 add-to-cart-btn" (click)="addToCart(product)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

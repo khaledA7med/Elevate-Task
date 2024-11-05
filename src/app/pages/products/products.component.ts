@@ -14,11 +14,13 @@ export class ProductsComponent implements OnInit {
   category: string = 'All Categories';
   categories: any[] = [];
   products: products[] = [];
+
   constructor(
     private productsService: ProductsService,
     private spinner: NgxSpinnerService,
     private shared: SharedService
   ) {}
+
   ngOnInit(): void {
     this.getCategories();
     this.getProducts();
@@ -32,7 +34,7 @@ export class ProductsComponent implements OnInit {
 
   getCategories() {
     this.productsService.getAllCategories().subscribe({
-      next: (res) => (this.categories = res),
+      next: (res) => (this.categories = ['All Categories', ...res]),
       error: (err) => {
         Swal.fire({
           icon: 'error',
@@ -66,12 +68,16 @@ export class ProductsComponent implements OnInit {
   filter(e: any) {
     this.spinner.show();
     this.category = e;
-    this.productsService.getProductsByCategory(e).subscribe({
-      next: (res) => {
-        this.products = res;
-        this.spinner.hide();
-      },
-    });
+    if (e === 'All Categories') {
+      this.getProducts();
+    } else {
+      this.productsService.getProductsByCategory(e).subscribe({
+        next: (res) => {
+          this.products = res;
+          this.spinner.hide();
+        },
+      });
+    }
   }
 
   addToCart(product: any) {

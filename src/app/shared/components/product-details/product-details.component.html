@@ -1,0 +1,31 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="productTitle">{{ product?.title }}</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.close('Close click')"></button>
+</div>
+
+<div class="modal-body">
+    <div class="row">
+        <!-- Image Column -->
+        <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+            <img [src]="product?.image" [alt]="product?.title || 'Product Image'" class="product-image"
+                *ngIf="product?.image; else loadingSkeleton" />
+            <ng-template #loadingSkeleton>
+                <div class="skeleton-loader" aria-hidden="true"></div>
+            </ng-template>
+        </div>
+
+        <!-- Details Column -->
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="product-info">
+                <h1 class="product-category color"><strong>{{ product?.category }}</strong></h1>
+                <p><strong>Price:</strong> ${{ product?.price }}</p>
+                <p><strong>Description:</strong> {{ product?.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="modal.close('Close click')">Close</button>
+    <button *ngIf="product.price" type="button" class="btn btn-sm btn-primary">Add to Cart</button>
+</div>
