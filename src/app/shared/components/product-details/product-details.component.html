@@ -27,5 +27,5 @@
 
 <div class="modal-footer">
     <button type="button" class="btn btn-sm btn-outline-secondary" (click)="modal.close('Close click')">Close</button>
-    <button *ngIf="product.price" type="button" class="btn btn-sm btn-primary">Add to Cart</button>
+    <button *ngIf="product?.price" type="button" class="btn btn-sm btn-primary">Add to Cart</button>
 </div>
