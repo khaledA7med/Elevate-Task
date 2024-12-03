@@ -9,6 +9,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { AuthModule } from '../core/auth/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     NgSelectModule,
     NgxSpinnerModule,
     FormsModule,
+    AuthModule,
   ],
   exports: [
     NavbarComponent,

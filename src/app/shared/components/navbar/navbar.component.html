@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark">
+<!-- <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark">
     <div class="container">
         <a class="navbar-brand" routerLink="/" routerLinkActive="router-link-active">
             <i class='bx bx-store me-2'></i> ShopEase
@@ -16,6 +16,43 @@
                     <a class="nav-link" routerLink="/products"><i class='bx bxl-shopify me-1'></i> Products</a>
                 </li>
             </ul>
+        </div>
+    </div>
+</nav> -->
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/" routerLinkActive="router-link-active">
+            <i class='bx bx-store me-2'></i> ShopEase
+        </a>
+        <button class="navbar-toggler" type="button" (click)="toggleCollapse()">
+            <i class='bx bx-menu'></i>
+        </button>
+        <div [ngClass]="{'collapse': !isNavbarCollapsed, 'navbar-collapse': true}" class="navbar-collapse">
+            <ul class="navbar-nav ms-auto me-5">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/"><i class='bx bx-home me-1'></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/products"><i class='bx bxl-shopify me-1'></i> Products</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/about"><i class='bx bx-info-circle me-1'></i> About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact"><i class='bx bx-envelope me-1'></i> Contact</a>
+                </li> -->
+            </ul>
+            <div class="d-flex align-items-center gap-2">
+                <a class="nav-link" routerLink="/cart">Cart <i class="bx bx-cart  me-1"></i></a>
+
+                <button class="btn btn-primary btn-login d-flex align-items-center" (click)="openVerticallyCentered()">
+                    <i class="bx bx-log-in"></i>Login
+                </button>
+                <button class="btn btn-primary btn-login d-flex align-items-center" *ngIf="isUser">
+                    <i class="bx bx-log-in"></i>Logout
+                </button>
+            </div>
         </div>
     </div>
 </nav>

@@ -1,12 +1,83 @@
+// $navbar-bg: #212324;
+// $navbar-text-color: #bac2ca;
+// $navbar-hover-color: #007bff;
+
+// .navbar {
+//   background-color: $navbar-bg;
+
+//   .navbar-brand {
+//     color: $navbar-hover-color;
+
+//     &:hover {
+//       color: $navbar-text-color;
+//     }
+//   }
+
+//   .navbar-toggler {
+//     border-color: $navbar-hover-color;
+
+//     // Change the toggler icon color to match the hover color
+//     .navbar-toggler-icon {
+//       background-image: none;
+
+//       &::before,
+//       &::after {
+//         content: "";
+//         display: block;
+//         width: 20px; // Adjust width if necessary
+//         height: 2px; // Adjust height if necessary
+//         background-color: $navbar-hover-color; // Use hover color
+//         margin: 5px 0; // Space between lines
+//       }
+
+//       &:hover {
+//         color: $navbar-text-color;
+//         border-color: $navbar-text-color;
+//       }
+//     }
+//   }
+
+//   .nav-link {
+//     color: $navbar-text-color;
+
+//     &:hover {
+//       color: $navbar-hover-color;
+//     }
+
+//     &.active {
+//       color: $navbar-hover-color;
+//     }
+//   }
+
+//   .form-control {
+//     border-radius: 20px;
+//   }
+
+//   .btn-outline-success {
+//     border-color: $navbar-hover-color;
+//     color: $navbar-hover-color;
+//     border-radius: 20px;
+
+//     &:hover {
+//       background-color: $navbar-hover-color;
+//       color: white;
+//     }
+//   }
+// }
+
 $navbar-bg: #212324;
 $navbar-text-color: #bac2ca;
 $navbar-hover-color: #007bff;
+$btn-radius: 25px;
 
 .navbar {
   background-color: $navbar-bg;
+  padding: 0.8rem 1.5rem;
 
   .navbar-brand {
+    font-size: 1.5rem;
     color: $navbar-hover-color;
+    font-weight: bold;
 
     &:hover {
       color: $navbar-text-color;
@@ -15,30 +86,50 @@ $navbar-hover-color: #007bff;
 
   .navbar-toggler {
     border-color: $navbar-hover-color;
+    color: $navbar-hover-color;
 
-    // Change the toggler icon color to match the hover color
     .navbar-toggler-icon {
-      background-image: none;
+      position: relative;
+      width: 30px;
+      height: 2px;
+      background-color: $navbar-hover-color;
 
       &::before,
       &::after {
         content: "";
         display: block;
-        width: 20px; // Adjust width if necessary
-        height: 2px; // Adjust height if necessary
-        background-color: $navbar-hover-color; // Use hover color
-        margin: 5px 0; // Space between lines
+        width: 30px;
+        height: 2px;
+        background-color: $navbar-text-color;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        top: 8px;
       }
 
       &:hover {
-        color: $navbar-text-color;
-        border-color: $navbar-text-color;
+        background-color: $navbar-text-color;
+        color: $navbar-text-color !important;
+
+        &::before,
+        &::after {
+          background-color: $navbar-text-color;
+        }
       }
     }
   }
 
   .nav-link {
     color: $navbar-text-color;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
 
     &:hover {
       color: $navbar-hover-color;
@@ -46,21 +137,56 @@ $navbar-hover-color: #007bff;
 
     &.active {
       color: $navbar-hover-color;
+      font-weight: bold;
     }
   }
 
-  .form-control {
-    border-radius: 20px;
-  }
-
-  .btn-outline-success {
-    border-color: $navbar-hover-color;
+  .btn-cart {
+    border: 2px solid $navbar-hover-color;
     color: $navbar-hover-color;
-    border-radius: 20px;
+    border-radius: $btn-radius;
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
 
     &:hover {
       background-color: $navbar-hover-color;
       color: white;
+    }
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .btn-login {
+    background-color: $navbar-hover-color;
+    color: white;
+    border-radius: $btn-radius;
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
+
+    &:hover {
+      background-color: darken($navbar-hover-color, 10%);
+    }
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .btn-cart,
+    .btn-login {
+      font-size: 0.8rem;
+      padding: 0.3rem 1rem;
+    }
+
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
     }
   }
 }

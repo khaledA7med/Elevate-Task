@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h4 class="modal-title">Sign in</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <form [formGroup]="LoginForm">
+            <div class="col-12">
+                <label for="">Username</label>
+                <input type="text" class="form-control mt-1" formControlName="username">
+            </div>
+            <div class="col-12 mt-3">
+                <label for="">Password</label>
+                <input type="password" class="form-control mt-1" formControlName="password">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-success" (click)="login()">Login</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+</div>
